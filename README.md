@@ -25,6 +25,7 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Try it out : https://codedot-ai-resume-analyzer.vercel.app/resume-analyzer
 
 The application will automatically redirect you to the resume analyzer page.
 
