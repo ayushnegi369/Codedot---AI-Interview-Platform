@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Resume Analyzer
+
+AI-powered resume analysis and ATS optimization tool. Upload your resume and get instant feedback to improve your job applications.
+
+## Features
+
+- **Resume Analysis**: Upload resume images and get detailed analysis
+- **ATS Optimization**: Get ATS scores and improvement tips
+- **Job Description Matching**: Compare your resume against specific job descriptions
+- **Structured Data Extraction**: Extract profile, skills, experience, education, and more
+- **Modern UI**: Beautiful, responsive interface with dark mode support
 
 ## Getting Started
 
@@ -16,18 +26,42 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The application will automatically redirect you to the resume analyzer page.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technology Stack
+
+- **Next.js 15** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **React Markdown** - Markdown rendering for tips
+- **Google Gemini AI** - Resume analysis backend
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── api/
+│   │   └── gemini-analyze/     # AI analysis endpoint
+│   ├── resume-analyzer/        # Main application
+│   └── layout.tsx              # Root layout
+├── components/
+│   ├── Navbar.tsx              # Navigation
+│   └── Footer.tsx              # Footer
+└── globals.css                 # Global styles
+```
+
+## API Integration
+
+The application uses Google Gemini AI for resume analysis. Make sure to configure your Gemini API key in the environment variables.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Google Gemini AI](https://ai.google.dev/)
 
 ## Deploy on Vercel
 

@@ -1,17 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 
-// Helper: Section titles for display
-const SECTION_TITLES = {
-  profile: "Profile",
-  skills: "Skills",
-  socials: "Social Media",
-  projects: "Projects",
-  experiences: "Work Experience",
-  education: "Education",
-};
+
 
 export default function ResumeAnalyzerPage() {
   const [resumeImage, setResumeImage] = useState<File | null>(null);
@@ -376,56 +369,60 @@ export default function ResumeAnalyzerPage() {
           </div>
         </div>
       )}
+      {/* No data message if nothing parsed */}
+      {!parsedData && (
+        <div className="w-full flex justify-center items-center py-12">
+          <div className="text-neutral-400 text-center text-lg">No data to display. Upload and analyze a resume image.</div>
+        </div>
+      )}
       {/* Masonry Grid for Results */}
-      <div className="w-full max-w-5xl columns-1 md:columns-2 gap-6 space-y-6 [column-fill:_balance]">
-        {/* Resume Image Block (if available) */}
-        {imageUrl && (
-          <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6 flex flex-col items-center">
-            <h2 className="font-semibold text-lg mb-4">Resume Image</h2>
-            <Image src={imageUrl} alt="Resume Preview" width={240} height={336} className="object-contain rounded-lg" />
-          </div>
-        )}
-        {/* Profile Block */}
-        {parsedData?.profile && (
-          <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
-            {renderProfile(parsedData.profile)}
-          </div>
-        )}
-        {/* Skills Block */}
-        {parsedData?.skills && (
-          <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
-            {renderSkills(parsedData.skills)}
-          </div>
-        )}
-        {/* Social Media Block */}
-        {parsedData?.socials && (
-          <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
-            {renderSocials(parsedData.socials)}
-          </div>
-        )}
-        {/* Projects Block */}
-        {parsedData?.projects && (
-          <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
-            {renderProjects(parsedData.projects)}
-          </div>
-        )}
-        {/* Work Experience Block */}
-        {parsedData?.experiences && (
-          <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
-            {renderExperiences(parsedData.experiences)}
-          </div>
-        )}
-        {/* Education Block */}
-        {parsedData?.education && (
-          <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
-            {renderEducation(parsedData.education)}
-          </div>
-        )}
-        {/* No data message if nothing parsed */}
-        {!parsedData && (
-          <div className="text-neutral-400 col-span-full">No data to display. Upload and analyze a resume image.</div>
-        )}
-      </div>
+      {parsedData && (
+        <div className="w-full max-w-5xl columns-1 md:columns-2 gap-6 space-y-6 [column-fill:_balance]">
+          {/* Resume Image Block (if available) */}
+          {imageUrl && (
+            <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6 flex flex-col items-center">
+              <h2 className="font-semibold text-lg mb-4">Resume Image</h2>
+              <Image src={imageUrl} alt="Resume Preview" width={240} height={336} className="object-contain rounded-lg" />
+            </div>
+          )}
+          {/* Profile Block */}
+          {parsedData?.profile && (
+            <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
+              {renderProfile(parsedData.profile)}
+            </div>
+          )}
+          {/* Skills Block */}
+          {parsedData?.skills && (
+            <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
+              {renderSkills(parsedData.skills)}
+            </div>
+          )}
+          {/* Social Media Block */}
+          {parsedData?.socials && (
+            <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
+              {renderSocials(parsedData.socials)}
+            </div>
+          )}
+          {/* Projects Block */}
+          {parsedData?.projects && (
+            <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
+              {renderProjects(parsedData.projects)}
+            </div>
+          )}
+          {/* Work Experience Block */}
+          {parsedData?.experiences && (
+            <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
+              {renderExperiences(parsedData.experiences)}
+            </div>
+          )}
+          {/* Education Block */}
+          {parsedData?.education && (
+            <div className="break-inside-avoid bg-white dark:bg-neutral-900 rounded-xl shadow p-6 mb-6">
+              {renderEducation(parsedData.education)}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -13,18 +13,12 @@ export default function Navbar() {
                 <div className="flex items-center justify-between">
                     {/* Logo Section - Left */}
                     <div className="flex items-center gap-3">
-                        <Image src="/logo.png" alt="Codedot Logo" width={32} height={32} className="shadow" />
-                        <h1 className="text-xl font-bold text-white">Codedot</h1>
+                        <Image src="/logo.png" alt="Resume Analyzer Logo" width={32} height={32} className="shadow" />
+                        <h1 className="text-xl font-bold text-white">Resume Analyzer</h1>
                     </div>
 
                     {/* Navigation Links - Center (Hidden on mobile) */}
                     <div className="hidden md:flex items-center space-x-8">
-                        <Link href="/" className="text-gray-300 hover:text-white transition-colors duration-200">
-                            Home
-                        </Link>
-                        <Link href="/coditor" className="text-gray-300 hover:text-white transition-colors duration-200">
-                            Coditor
-                        </Link>
                         <Link href="/resume-analyzer" className="text-gray-300 hover:text-white transition-colors duration-200">
                             Resume Analyzer
                         </Link>
@@ -53,21 +47,7 @@ export default function Navbar() {
                     <div className="md:hidden mt-4 pb-4 border-t border-gray-700">
                         <div className="flex flex-col space-y-4 pt-4">
                             <Link 
-                                href="/" 
-                                className="text-gray-300 hover:text-white transition-colors duration-200"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Home
-                            </Link>
-                            <Link 
-                                href="/about" 
-                                className="text-gray-300 hover:text-white transition-colors duration-200"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Coditor
-                            </Link>
-                            <Link 
-                                href="/contact" 
+                                href="/resume-analyzer" 
                                 className="text-gray-300 hover:text-white transition-colors duration-200"
                                 onClick={() => setIsMenuOpen(false)}
                             >

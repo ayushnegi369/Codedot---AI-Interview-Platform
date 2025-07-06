@@ -9,11 +9,11 @@ export default function Footer() {
                     {/* Logo and Description */}
                     <div className="col-span-1 md:col-span-2">
                         <div className="flex items-center gap-3 mb-4">
-                            <Image src="/logo.png" alt="Codedot Logo" width={32} height={32} className="shadow" />
-                            <h3 className="text-xl font-bold">Codedot</h3>
+                            <Image src="/logo.png" alt="Resume Analyzer Logo" width={32} height={32} className="shadow" />
+                            <h3 className="text-xl font-bold">Resume Analyzer</h3>
                         </div>
                         <p className="text-gray-400 mb-6 max-w-md">
-                            Practice job interviews with AI. Improve your coding skills and land your dream job with our intelligent interview preparation platform.
+                            AI-powered resume analysis and ATS optimization tool. Upload your resume and get instant feedback to improve your job applications.
                         </p>
                         <div className="flex space-x-4">
                             <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
@@ -38,16 +38,6 @@ export default function Footer() {
                     <div>
                         <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                         <ul className="space-y-2">
-                            <li>
-                                <Link href="/" className="text-gray-400 hover:text-white transition-colors duration-200">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/coditor" className="text-gray-400 hover:text-white transition-colors duration-200">
-                                    Coditor
-                                </Link>
-                            </li>
                             <li>
                                 <Link href="/resume-analyzer" className="text-gray-400 hover:text-white transition-colors duration-200">
                                     Resume Analyzer
@@ -87,7 +77,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-gray-400 text-sm">
-                        © 2024 Codedot. All rights reserved.
+                        © 2024 Resume Analyzer. All rights reserved.
                     </p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
                         <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">

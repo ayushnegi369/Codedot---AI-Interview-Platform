@@ -1,7 +1,8 @@
 {
-  "name": "codedot_project",
+  "name": "resume-analyzer",
   "version": "0.1.0",
   "private": true,
+  "description": "AI-powered resume analysis and ATS optimization tool",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
